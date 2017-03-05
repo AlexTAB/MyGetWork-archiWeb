@@ -35,133 +35,77 @@
         	</div>
      	</header>
 
-	    <div class="omb_login">
-	    	<h3 class="omb_authTitle">Login up</h3>
-			<div class="row omb_row-sm-offset-3 omb_socialButtons">
-	    	    <div class="col-xs-4 col-sm-2">
-			        <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
-				        <i class="fa fa-facebook visible-xs"></i>
-				        <span class="hidden-xs">Facebook</span>
-			        </a>
-		        </div>
-	        	<div class="col-xs-4 col-sm-2">
-			        <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
-				        <i class="fa fa-twitter visible-xs"></i>
-				        <span class="hidden-xs">Twitter</span>
-			        </a>
-		        </div>	
-	        	<div class="col-xs-4 col-sm-2">
-			        <a href="#" class="btn btn-lg btn-block omb_btn-google">
-				        <i class="fa fa-google-plus visible-xs"></i>
-				        <span class="hidden-xs">Google+</span>
-			        </a>
-		        </div>	
-			</div>
-
-			<div class="row omb_row-sm-offset-3 omb_loginOr">
-				<div class="col-xs-12 col-sm-6">
-					<hr class="omb_hrOr">
-					<span class="omb_spanOr">or</span>
-				</div>
-			</div>
-
-			<div class="row omb_row-sm-offset-3">
-				<div class="col-xs-12 col-sm-6">	
-				    <form class="omb_loginForm" action="" autocomplete="off" method="POST">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-user"></i></span>
-							<input type="text" class="form-control" name="username" placeholder="email address">
-						</div>
-						<span class="help-block"></span>
-											
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-							<input  type="password" class="form-control" name="password" placeholder="Password">
-						</div>
-	                    <span class="help-block">Password error</span>
-
-						<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-					</form>
-				</div>
-	    	</div>
-			<div class="row omb_row-sm-offset-3">
-				<div class="col-xs-12 col-sm-3">
-					<label class="checkbox">
-						<input type="checkbox" value="remember-me">Remember Me
-					</label>
-				</div>
-				<div class="col-xs-12 col-sm-3">
-					<p class="omb_forgotPwd">
-						<a href="#">Forgot password?</a>
-					</p>
-				</div>
-
-			</div>	    	
-		</div>
-
 		<div class="row main">
 				<div class="omb_login">
 	    			<h3 class="omb_authTitle">sign up</h3>
 				</div>
 				<div class="main-login main-center">
 				<h5>Sign up once and watch any of our free demos.</h5>
-					<form class="" method="post" action="#">
-						
+					<form class="" method="post" action="">
+						{% csrf_token %}
 						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<label for="id_yourname" class="cols-sm-2 control-label">Your Name</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+									<!--<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>-->
+									<ui class="form-control">{{ formSignup.yourname }}</ui>
+									
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<label for="id_email" class="cols-sm-2 control-label">Your Email</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<!--<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>-->
+									<ui class="form-control">{{ formSignup.email }}</ui>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<label for="id_username" class="cols-sm-2 control-label">Username</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+									<!--<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>-->
+									<ui class="form-control">{{ formSignup.username }}</ui>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<label for="id_password" class="cols-sm-2 control-label">Password</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<!--<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>-->
+									<ui class='form-control'>{{ formSignup.password }}</ui>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<label for="id_passwordConfirm" class="cols-sm-2 control-label">Confirm Password</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									<!--<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>-->
+									<ui class="form-control">{{ formSignup.passwordConfirm }}</ui>
 								</div>
 							</div>
 						</div>
-
+						<span class="help_text">{{ resSignup }}</span>
 						<div class="form-group ">
-							<a href="home.html" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+							<!--<a href="login.html" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>-->
+							<button target="_blank" class="btn btn-primary btn-lg btn-block login-button" type="submit">Register</button>
 						</div>
-						
+
 					</form>
+
 				</div>
 			</div>
 		</div>
