@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Site Projet web SSII">
+    <meta name="author" content="Yassine M'CHAAR, Weiben WANG, Alexandre TABOT">
+    <title>gallery- MyBlog</title>
+    <!-- Fonts -->
+     <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../css/gallery.css" rel="stylesheet">
+    <link href="../css/home.css" rel="stylesheet">
+   
+    
+</head>
+    <body>
+        <!-- header -->
+        <header class="container-fluid header">
+            <div class="container">
+                <a href="home.html" class="logo">Myblog</a>
+                <nav class="menu">
+                	<a href="inscription.html">LogOut</a>
+                </nav>
+            </div>
+        </header>
+        <!-- end header -->
+
+        <!-- bannière -->
+        <section class="container-fluid banner">
+            <div class=" row">
+            	<div class="container">
+            	 	<div class="col-md-3 ">
+                            <ul id="menu-accordeon">
+                               <li><a href="home.html"><i class="glyphicon glyphicon-home"> Home </i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play"></i> Videos </a>
+                                  <ul>
+                                     <li><a href="#">Ajouter</a></li>
+                                     <li><a href="#">Consulter</a></li>
+                                     
+                                  </ul>
+                               </li>
+                               <li><a href="#"><span class="glyphicon glyphicon-picture"></span> Pictures </a>
+                                  <ul>
+                                     <li><a href="gallery.html">Consulter</a></li>                            
+                                  </ul>
+                               </li>
+                               <li><a href="#"><i class="fa fa-newspaper-o"></i> Articles</a>
+                                  <ul>
+                                     <li><a href="#">Ajouter</a></li>
+                                     <li><a href="#">Consulter</a></li>
+                                     
+                                  </ul>
+                               </li>
+                               <li><a href="#"><i class="fa fa-calendar"></i> Calender </a></li>
+                            </ul>
+                    </div>
+                    <div class="col-md-offset-1 col-md-3">
+					          <form id="upload-file" action="" method="post" enctype="multipart/form-data" >
+                          <input id="name" type="file" name="file"/>
+                          <input id="upload-file-btn" type="button" value="Upload"/>
+                    </form>
+
+					       </div>
+              </div>
+            </div>
+
+        </section>
+        <!-- end bannière -->
+
+    	<!-- footer -->
+    	<footer class="container-fluid footer">
+            <p>
+                 Copyright <i class="fa fa-copyright"></i> 2017 Copyright Holder all Rights Reserved.
+            </p>
+            
+        </footer>
+        <!-- end footer -->
+        <!-- jQuery -->
+        <script src="../js/gallery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+    </body>   
+</html>

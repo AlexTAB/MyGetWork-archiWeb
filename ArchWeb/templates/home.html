@@ -11,7 +11,6 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/home.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -43,15 +42,33 @@
             		<button  class="btn btn-custom" > <a href="#contact"><i class="fa fa-envelope"></i> Contactez moi ! </a> </button>
             	</div>
 
-                <div class="col-md-3 nav">
-                            <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
-                              <li class="active"><a href="home.html" ><i class="glyphicon glyphicon-home"> Home </i></a> </li>
-                              <li><a href="#vtab2" ><i class="fa fa-youtube-play"></i> Videos </a></li>
-                              <li><a href="#vtab3" ><span class="glyphicon glyphicon-picture"></span> Pictures </a></li>
-                              <li><a href="#vtab3" ><i class="fa fa-newspaper-o"></i> Articles</a></li>
-                              <li><a href="#vtab3" ><i class="fa fa-calendar"></i> Calender</a></li>
-                              <li><a href="#about" ><i class="fa fa-edit"></i></i> About</a></li>
-                            </ul>
+                <div class="col-md-3 ">
+                    <ul id="menu-accordeon">
+                       <li><a href="home.html"><i class="glyphicon glyphicon-home"> Home </i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube-play"></i> Videos </a>
+                          <ul>
+                             <li><a href="#">Ajouter</a></li>
+                             <li><a href="#">Consulter</a></li>
+                             
+                          </ul>
+                       </li>
+                       <li><a href="#"><span class="glyphicon glyphicon-picture"></span> Pictures </a>
+                          <ul>
+                             <li><a href="picture.html">Ajouter</a></li>
+                             <li><a href="gallery.html">Consulter</a></li>
+                             
+                          </ul>
+                       </li>
+                       <li><a href="#"><i class="fa fa-newspaper-o"></i> Articles</a>
+                          <ul>
+                             <li><a href="#">Ajouter</a></li>
+                             <li><a href="#">Consulter</a></li>
+                             
+                          </ul>
+                       </li>
+                       <li><a href="#"><i class="fa fa-calendar"></i> Calender </a></li>
+                       <li><a href="#about"><i class="fa fa-edit"></i></i> About </a></li>
+                    </ul>
                 </div>
             </div>
 
@@ -85,26 +102,6 @@
     		</div>
     	</section>
         <!-- end à propos-->
-        
-
-        <!--videos-->
-        <section class="container-fluid video">
-
-    	</section>
-    	<!-- end videos-->
-
-    	<!-- photos-->
-         <section class="container-fluid image">
-
-    	</section>
-    	<!-- end photos-->
-
-    	<!-- article-->
-    	<section class="container-fluid article">
-
-    	</section>
-    	<!-- end article-->
-
 
     	<!-- footer -->
     	<footer class="container-fluid footer">
@@ -135,9 +132,7 @@
         </footer>
         <!-- end footer -->
         <!-- jQuery -->
-        <script src="../js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>   
 </html>
