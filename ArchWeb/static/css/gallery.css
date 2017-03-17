@@ -2,19 +2,12 @@
  * Wrappers
  */
 
-html, body, #container {
+#container {
     overflow: hidden;
     height: 100%;
     width: 100%;
 }
 
-body {
-    background: #7c7c7c url('../img/bg.png') 50% 0%;
-    -webkit-transition: background-color linear 4s;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-	font-size: 16px;
-}
 
 h1, h2, h3 {
 	font-weight: 300;

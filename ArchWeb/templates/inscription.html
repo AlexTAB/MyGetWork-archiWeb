@@ -1,5 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load staticfiles %}
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,13 +10,13 @@
 
     <title>formulaire inscription</title>
 
-    <!-- Bootstrap core CSS -->
+
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
    	<link href="{% static 'css/inscription.css' %}" rel="stylesheet" >
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	
-		<!-- Google Fonts -->
+
 	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
@@ -34,6 +36,13 @@
          		 <a href=#"Myblog"></a>
         	</div>
      	</header>
+-->
+
+   <!-- <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">-->
+   	<link href="{% static 'css/inscription.css' %}" rel="stylesheet" >
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	
 
 		<div class="row main">
 				<div class="omb_login">
@@ -49,7 +58,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									<!--<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>-->
-									<ui class="form-control">{{ formSignup.yourname }}</ui>
+									{{ formSignup.yourname }}
 									
 								</div>
 							</div>
@@ -61,7 +70,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
 									<!--<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>-->
-									<ui class="form-control">{{ formSignup.email }}</ui>
+									{{ formSignup.email }}
 								</div>
 							</div>
 						</div>
@@ -72,7 +81,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
 									<!--<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>-->
-									<ui class="form-control">{{ formSignup.username }}</ui>
+									{{ formSignup.username }}
 								</div>
 							</div>
 						</div>
@@ -83,7 +92,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 									<!--<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>-->
-									<ui class='form-control'>{{ formSignup.password }}</ui>
+									{{ formSignup.password }}
 								</div>
 							</div>
 						</div>
@@ -94,7 +103,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 									<!--<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>-->
-									<ui class="form-control">{{ formSignup.passwordConfirm }}</ui>
+									{{ formSignup.passwordConfirm }}
 								</div>
 							</div>
 						</div>
@@ -108,8 +117,7 @@
 
 				</div>
 			</div>
-		</div>
-	</div>
 
-  </body>
-</html>
+ <!-- </body>
+</html>-->
+{% endblock %}

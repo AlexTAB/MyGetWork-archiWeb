@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'article/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'article/css/pygments/github.css' %}">
+   <div id="banner" class="noselect"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div id="category" class="noselect">
+                    <div id="category-title">
+                        <ul>
+                            <li>Class:</li>
+
+                            {% for category in category_list %}
+                                <li class="cat-item"><a
+                                        href="{% url 'category' category.pk %}">{{ category.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="bd" class="wrp clear-fix">
+                    <div id="main">
+                    {% load paginate_tags %}
+                    {% paginate article_list 3 %}
+                        {% for article in article_list %}
+                            <div class="post">
+                                <div class="post-hd">
+                                    <h1 class="title"><a
+                                            href="{% url 'detail' article.pk %}">{{ article.title }}</a></h1>
+                                </div>
+
+                                <div class="post-ft">
+                                    <a href="{% url 'detail' article.id %}" class="more">Read Article</a>
+                                    <i class="icon-date"></i>
+                                    <span class="date">{{ article.last_modified_time|date:"Y/n/d" }}</span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        {% include 'Article/pagination.html' %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <!-- tags -->
+                <h3>Tag:</h3>
+                <div class="list-group">
+                    {% for tag in tag_list %}
+                        <a href="{% url 'tag' tag.pk %}" class="list-group-item"><span
+                                class="badge"></span>{{ tag.name }}</a>
+                    {% endfor %}
+                </div>
+
+                <!-- archive -->
+                <h3>Classfication：</h3>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    {% for year,months in date_archive %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapse{{ forloop.counter }}"
+                                       aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+                                        {{ year }} year
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="heading{{ forloop.counter }}">
+                                <div class="panel-body">
+                                    {% for month in months %}
+                                        <a href="{% url 'archive' year month %}"><p>{{ month }} month</p></a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

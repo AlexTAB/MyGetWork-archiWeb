@@ -1,4 +1,4 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +15,8 @@
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="../css/gallery.css" rel="stylesheet">
-    <link href="../css/home.css" rel="stylesheet">
+    <link href="{% static 'css/gallery.css' %}" rel="stylesheet">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
    
     
 </head>
@@ -24,9 +24,9 @@
         <!-- header -->
         <header class="container-fluid header">
             <div class="container">
-                <a href="home.html" class="logo">Myblog</a>
+                <a href="home" class="logo">Myblog</a>
                 <nav class="menu">
-                	<a href="inscription.html">LogOut</a>
+                	<a href="inscription">Sign up</a>
                 </nav>
             </div>
         </header>
@@ -38,7 +38,7 @@
             	<div class="container">
             	 	<div class="col-md-3 ">
                             <ul id="menu-accordeon">
-                               <li><a href="home.html"><i class="glyphicon glyphicon-home"> Home </i></a></li>
+                               <li><a href="home"><i class="glyphicon glyphicon-home"> Home </i></a></li>
                                 <li><a href="#"><i class="fa fa-youtube-play"></i> Videos </a>
                                   <ul>
                                      <li><a href="#">Ajouter</a></li>
@@ -48,7 +48,7 @@
                                </li>
                                <li><a href="#"><span class="glyphicon glyphicon-picture"></span> Pictures </a>
                                   <ul>
-                                     <li><a href="gallery.html">Consulter</a></li>                            
+                                     <li><a href="gallery">Consulter</a></li>                            
                                   </ul>
                                </li>
                                <li><a href="#"><i class="fa fa-newspaper-o"></i> Articles</a>
@@ -62,11 +62,15 @@
                             </ul>
                     </div>
                     <div class="col-md-offset-1 col-md-3">
-					          <form id="upload-file" action="" method="post" enctype="multipart/form-data" >
-                          <input id="name" type="file" name="file"/>
-                          <input id="upload-file-btn" type="button" value="Upload"/>
+					          <form id="upload-file" action="" method="POST" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                          {{ formPhoto.as_p }}
+                          <input id="upload-file-btn" type="submit" value="Upload"/>
                     </form>
-
+                    {% for error1 in formPhoto.errors %}
+                    <span class='help_text'>{{ error1 }}</span>
+                    {% endfor %}
+                    {% if error %}<span class='help_text'>{{error}}</span>{% endif %}
 					       </div>
               </div>
             </div>
@@ -83,12 +87,12 @@
         </footer>
         <!-- end footer -->
         <!-- jQuery -->
-        <script src="../js/gallery.js"></script>
+        <script src="{% static 'json/gallery.js' %}"></script>
 
         <!-- Bootstrap Core JavaScript -->
    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+        <script src="{% static 'json/gallery.js'%}"></script>
     </body>   
 </html>

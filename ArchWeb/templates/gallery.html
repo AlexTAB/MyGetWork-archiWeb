@@ -1,6 +1,8 @@
-
- <!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+ <!--<!DOCTYPE html>
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,72 +10,63 @@
         <meta name="description" content="Site Projet web SSII">
         <meta name="author" content="Yassine M'CHAAR, Weiben WANG, Alexandre TABOT">
         <title>Gallery- MyBlog</title>
-        <!-- Fonts -->
        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         
-       <link href="../css/gallery.css" rel="stylesheet">
-        
+       <link href="{% static 'css/gallery.css' %}" rel="stylesheet">
+       <link rel="stylesheet" type="text/css" href="{% static 'css/home.css'%}">
     </head>
 
-	<body>
-		<div id="container">
-		
-			<div id="next" data-modify="1" class="control">
-				<span>Next video</span>
-			</div>
-		
-			<div id="back" class="control">
-				<span>Back to grid</span>
-			</div>
-			
-			<div id="prev" data-modify="-1" class="control">
-				<span>Previous video</span>
-			</div>
-			
-			<div id="loading">
-				Gallery is loading&hellip;
-			</div>
-			
-			<div id="warning">
-				Your browser does not support 3D. Please use the latest version of <a href="http://google.com/chrome">Google Chrome</a> to view this demo.
-			</div>
+	<body>-->
+	
+   <div class="container" style="height:200px; margin-top:50px">	
+     <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner" style="height: 150px">
+            <div class="item">
+                <img class='img-responsive' src="{% url 'image' '/photos/IMG_0615.JPG' %}" alt="first image">
+            </div>
+            <div class="item active">
+                <img class='img-responsive' src="{% static 'image/travail.jpg' %}" alt="second image">
+            </div>
+        </div>
+        <a href="#myCarousel" data-slide="prev" class="carousel-control left">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#myCarousel" data-slide="next" class="carousel-control right">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+    </div>
+        <script type="text/javascript">
+            $('#myCarousel').carousel({
+                interval : 5000,
+            })
+        </script>
+        
 
-		    <div id="main" role="main">
-		
-				<ul id="gallery" class="clearfix">
-					
-					<li>
-						<div>	
-							<section>
-							<img src="assets/battlefield3.jpg" />
-							<span class="back"></span>
-							<div class="title">
-								<h3>Battlefield 3<span class="after"></span></h3>
-							</div>
-							<video preload="none" width="640" height="360" src="assets/battlefield3.mp4"></video>
-							</section>
-						</div>
-					</li>
-					
-				
-				</ul>
+        <!-- bannière -->
+            
+                <div class="container">
 
-		    </div>
-		
-			<footer id="footer">
-				
-				<p> Video Gallery </p>
-				
-			</footer>
+                    <div class="col-md-offset-1 col-md-3" style='top: 20px'>
+                              <form id="upload-file" method="POST" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                          {{ formPhoto.as_p }}
+                          <input id="upload-file-btn" type="submit" value="Upload"/>
+                    </form>
+                    {% for error1 in formPhoto.errors %}
+                    <span class='help_text'>{{ error1 }}</span>
+                    {% endfor %}
+                    {% if error %}<span class='help_text'>{{error}}</span>{% endif %}
+                   </div>
+              </div>
 
-		</div>
-
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-		<script src="js/jquery.jc.videogallery.js"></script>
-		<script src="js/master.js"></script>
-		<script src="../js/gallery.js"></script>
-	</body>	
-</html>
+    
+	<!--</body>	
+</html>-->
+{% endblock %}

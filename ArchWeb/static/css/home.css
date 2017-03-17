@@ -61,15 +61,16 @@ a,a:hover{
 }
 
 .ban{
+	margin-top: 30px;
 	width: 100px;
 	max-width:100px;
 	position: left;
 
 }
 
-.ban img{
-	width: 1750%;
-	max-width:1750%;
+.banls { 
+	width: 100%;
+	max-width: 100%;
 
 }
 
@@ -112,7 +113,7 @@ a,a:hover{
 
 .footer{
 	background-color: #2C3E58;
-	height:500px;
+	height:auto;
 }
 
 .footer p{
@@ -217,4 +218,35 @@ textarea{
   max-height: 15em;
 }
 
-
+#myCarousel {
+	margin: 50px 0 0 0;
+}
+#navbar-collapse ul{
+	margin-top:0;
+}
+.carousel-inner .item img{
+	margin: 0 auto;
+}
+.carousel-control {
+	font-size: 100px;
+}
+.masthead {
+	background-color: rgba(0,0,0,.85);
+	position : relative;
+	text-align: center;
+	overflow: hidden;
+	margin: 20px 0 0 0;
+	vertical-align: middle;
+	border: 0;
+}
+.dropdown-menu {
+	position: relative;
+	border-radius: 0 6px 6px 6px;
+	background-color: transparent;
+}
+.navbar-collapse .in{
+	overflow-y: auto;
+}
+.collapse .in{
+	display:block;
+}

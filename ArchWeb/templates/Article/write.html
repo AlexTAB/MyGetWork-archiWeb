@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+  	<link rel="stylesheet" href="{% static 'article/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'article/css/pygments/github.css' %}">
+<div class='container'>
+	<div class='row'>
+		<form method='POST'>
+			{% csrf_token %}
+			{% for item in article_form %}
+			<li class=''>{{ item }}</li>
+			{% endfor %}
+			<button type='submit' class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

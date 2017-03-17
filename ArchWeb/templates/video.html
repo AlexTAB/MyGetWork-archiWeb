@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,10 +10,7 @@
     <meta name="description" content="Site Projet web SSII">
     <meta name="author" content="Yassine M'CHAAR, Weiben WANG, Alexandre TABOT">
     <title>Home- MyBlog</title>
-    <!-- Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-    <!-- Bootstrap Core CSS -->
+
     <link rel="stylesheet" href="bootstrap.min.css">
     <link href="getLink.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,10 +18,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    
-    <!-- jscript-->
+
 </head>
     <body>
-            <!-- header -->
+
             <header class="container-fluid header">
                 <div class="container">
                     <a href="home.html" class="logo">Myblog</a>
@@ -30,13 +30,12 @@
                     </nav>
                 </div>
             </header>
+         -->
+
+    <link href="{% static 'css/getLink.css'%}" rel="stylesheet">
+
          
-
-
-
-         
-
-           <div class="col-lg-12 text-center">
+           <div class="col-lg-12 text-center" style="margin-top:50px">
                 <form id="" action="" method="post" enctype="multipart/form-data" >
                     <h3>nom de la video</h3>
                     <input id="nomVideo" type=""  width=”10” height=”360” />
@@ -49,27 +48,31 @@
 
            </div>
             
-         
+        <section> 
         <div class="container">
             <div class="row">
+                <ul>
                 <h2>Vos video</h2>
                 <div class="col-md-4">
-                    <div class="video"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/AWdA7hdP4ZA?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></div>
+                    <li class="video"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/AWdA7hdP4ZA?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></li>
                 </div>
                 <div class="col-md-4">
-                    <div class="video"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/I39RKjerJss?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></div>
+                    <li class="video"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/I39RKjerJss?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></li>
                 </div>
                 <div class="col-md-4">
-                    <div class="video"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Dkx4LYeFnVY?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></div>
+                    <li class="video"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Dkx4LYeFnVY?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></li>
                 </div>
+                </ul>        
             </div>
         </div>
-        
+    </section>
+   
             <!-- footer -->
             
             <!-- end footer -->
             <!-- jQuery -->
             
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>   
-</html>
+</html>-->
+{% endblock %}

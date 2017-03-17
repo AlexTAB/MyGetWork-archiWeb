@@ -1,20 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load staticfiles %}
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>formulaire inscription</title>
+    <title>Login</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
    	<link href="{% static 'css/inscription.css' %}" rel="stylesheet" >
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	
-		<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
@@ -26,15 +26,17 @@
         <div class="container">
          	<a class="logo">Myblog</a>
         </div>
-    </header>
+    </header>-->
+	<link href="{% static 'css/inscription.css' %}" rel="stylesheet" >
 
-    <div class="container">
-    	<header class="row">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    	<!--<header class="row">
         	<div class="col-sm-12">
          		 <a href=#"Myblog"></a>
         	</div>
-     	</header>
-
+     	</header>-->
+     <div style="margin-top:40px;height:500px;position:relative;">
 	    <div class="omb_login">
 	    	<h3 class="omb_authTitle">Login up</h3>
 			<div class="row omb_row-sm-offset-3 omb_socialButtons">
@@ -72,14 +74,14 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-user"></i></span>
 							<!--<input type="text" class="form-control" name="username" placeholder="email address">-->
-							<label for="id_username" class="form-control">{{ form.username }}</label>
+							{{ form.username }}
 						</div>
 						<span class="help-block"></span>
 											
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-lock"></i></span>
 							<!--<input  type="password" class="form-control" name="password" placeholder="Password">-->
-							<label for="id_pwd" class="form-control">{{ form.pwd }}</label>
+							{{ form.pwd }}
 							
 						</div>
 					
@@ -97,7 +99,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-3">
 					<p class="omb_forgotPwd">
-						<a href="#">Forgot password?</a>
+						<a href="/passwordreset">Forgot password?</a>
 					</p>
 				</div>
 
@@ -105,5 +107,6 @@
 		</div>
 	</div>
 
-  </body>
-</html>
+  <!--</body>
+</html>-->
+{% endblock %}

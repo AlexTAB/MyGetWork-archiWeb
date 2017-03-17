@@ -1,138 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Site Projet web SSII">
-    <meta name="author" content="Yassine M'CHAAR, Weiben WANG, Alexandre TABOT">
-    <title>Home- MyBlog</title>
-    <!-- Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-    <!-- Bootstrap Core CSS -->
-    <link href="../css/home.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   
-    <!-- jscript-->
-</head>
-    <body>
-        <!-- header -->
-        <header class="container-fluid header">
+  
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %} 
+
+    <div class="masthead">
+       <img class="img-reponsive banls" src="{% static 'image/ban.jpg'%}">
+       <div class="inner-banner">
             <div class="container">
-                <a href="home.html" class="logo">Myblog</a>
-                <nav class="menu">
-                	<a href="inscription.html">Login Out</a>
-                </nav>
-            </div>
-        </header>
-        <!-- end header -->
-
-        <!-- bannière -->
-        <section class="container-fluid banner">
-            <div class=" row">
-            	<div class="ban">
-                    <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-            		  <img src="../image/ban.jpg" alt="bannière du site"/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="login"><h2>Start Working</h2></a>
                     </div>
-            	</div>
-            	<div class="inner-banner">
-            		<h1>Bienvenue sur MyBlog</h1>
-            		<button  class="btn btn-custom" > <a href="#contact"><i class="fa fa-envelope"></i> Contactez moi ! </a> </button>
-            	</div>
-
-                <div class="col-md-3 ">
-                    <ul id="menu-accordeon">
-                       <li><a href="home.html"><i class="glyphicon glyphicon-home"> Home </i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube-play"></i> Videos </a>
-                          <ul>
-                             <li><a href="#">Ajouter</a></li>
-                             <li><a href="#">Consulter</a></li>
-                             
-                          </ul>
-                       </li>
-                       <li><a href="#"><span class="glyphicon glyphicon-picture"></span> Pictures </a>
-                          <ul>
-                             <li><a href="picture.html">Ajouter</a></li>
-                             <li><a href="gallery.html">Consulter</a></li>
-                             
-                          </ul>
-                       </li>
-                       <li><a href="#"><i class="fa fa-newspaper-o"></i> Articles</a>
-                          <ul>
-                             <li><a href="#">Ajouter</a></li>
-                             <li><a href="#">Consulter</a></li>
-                             
-                          </ul>
-                       </li>
-                       <li><a href="#"><i class="fa fa-calendar"></i> Calender </a></li>
-                       <li><a href="#about"><i class="fa fa-edit"></i></i> About </a></li>
-                    </ul>
                 </div>
             </div>
+         </div>
+    </div> 
 
-        </section>
-        <!-- end bannière -->
-        
-        <!-- à propos -->
-    	<section class="container-fluid about">
-    		<div class="container">
-        		<div class="row">
-        			<h2 id="about">About</h2>
+<div class="container-fluid about">
+            <div class="container">
+                <div class="row">
+                    <h2 id="about">About</h2>
                     <hr class="separator">
-    	    		<article div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-    	    			<h2>Etudes</h2>
-    	    			<p> 
+                    <article div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                        <h2>Etudes</h2>
+                        <p> 
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius varius condimentum. Nullam scelerisque leo mauris, nec dapibus arcu finibus sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed consectetur ante erat, vehicula feugiat augue tincidunt id. Praesent non euismod justo. Morbi nec massa eget nisl semper semper id non ex. Nunc fermentum eros ut sapien viverra vulputate ac vel tortor. Praesent sagittis venenatis scelerisque. 
-    	    			</p>
-    	    		</article>
-    	    		<article div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-    	    			<h2>Expérience</h2>
-    	    			<p> 
+                        </p>
+                    </article>
+                    <article div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                        <h2>Expérience</h2>
+                        <p> 
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius varius condimentum. Nullam scelerisque leo mauris, nec dapibus arcu finibus sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed consectetur ante erat, vehicula feugiat augue tincidunt id. Praesent non euismod justo. Morbi nec massa eget nisl semper semper id non ex. Nunc fermentum eros ut sapien viverra vulputate ac vel tortor. Praesent sagittis venenatis scelerisque. 
-    	    			</p>
-    	    		</article>
-    	    		<article div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-    	    			<h2>Hobbies</h2>
-    	    			<p> 
+                        </p>
+                    </article>
+                    <article div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                        <h2>Hobbies</h2>
+                        <p> 
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius varius condimentum. Nullam scelerisque leo mauris, nec dapibus arcu finibus sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed consectetur ante erat, vehicula feugiat augue tincidunt id. Praesent non euismod justo. Morbi nec massa eget nisl semper semper id non ex. Nunc fermentum eros ut sapien viverra vulputate ac vel tortor. Praesent sagittis venenatis scelerisque. 
-    	    			</p>
-    	    		</article>
-    		</div>
-    	</section>
-        <!-- end à propos-->
-
-    	<!-- footer -->
-    	<footer class="container-fluid footer">
-        	<div class="container">
-               <div class="row">
-                  <h2 class="contact" id="contact"> Contactez-moi !</h2>
-                  <hr class="separator">
-                    <div class="span6">
-                        <form class="formulaireContact">
-                            <div class="controls controls-row">
-                                <input id="name" name="name" type="text" class="span3" placeholder="Name"> 
-                                <input id="email" name="email" type="email" class="span3" placeholder="Email address">
-                            </div>
-                            <div class="controls">
-                                <textarea id="message" name="message" class="span6" placeholder="Your Message" rows="5"></textarea>
-                            </div>
-                              
-                            <div class="controls">
-                                <button id="contact-submit" type="submit" class="btn btn-custom input-medium pull-right">Send</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <p>
-                    Copyright <i class="fa fa-copyright"></i> 2017 Copyright Holder all Rights Reserved.
-                </p>
+                        </p>
+                    </article>
             </div>
-        </footer>
-        <!-- end footer -->
-        <!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </body>   
-</html>
+    </div>
+{% endblock %}
+
+ 
